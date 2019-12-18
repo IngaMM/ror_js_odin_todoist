@@ -1,0 +1,17 @@
+last_in_alphabet:
+  id: 1
+  title: "ZZZ"
+  color: "red"
+  user: user1
+
+first_in_alphabet:
+  id: 2
+  title: "AAA"
+  color: "blue"
+  user: user1
+
+another_project:
+  id: 3
+  title: "Another Project"
+  color: "orange"
+  user: user1

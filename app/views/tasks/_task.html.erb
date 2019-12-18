@@ -1,0 +1,21 @@
+<li class="task">
+  <div class="taskEntry">
+    <% buttonText = if task.completed == "true" then "&#10003".html_safe else "" end%>
+    <% buttonClass = if task.completed == "true" then "isCompleted" else "setCompleted" end%>
+  <%= button_to buttonText, task_toggleCompleted_path(task), class: buttonClass %>
+  <%= task.title %><span class="threeDotsTask" data-taskid = <%=task.id%> data-tasktitle = <%=task.title.to_json.html_safe%> data-taskprojecttitle = <%=task.project.title.to_json.html_safe%> data-taskduedate = <%=task.duedate%>>...</span>
+  <% if !@showNoProjectButDueDate %>
+    <span class="projectForTaskEntry">
+      <%= link_to task.project.title, task.project %> <span class="dot" style="background-color:<%=task.project.color%>"></span>
+    </span>
+  <% else %>
+    <% urgency = if task.duedate < Time.now.beginning_of_day && task.completed == "false" then "overdue" else "" end%>
+    <% showDate = task.duedate.to_s(:long) %>
+    <% showDate = "today" if (task.duedate > Time.now.beginning_of_day && task.duedate < Time.now.end_of_day) %>
+    <% showDate = "tomorrow" if (task.duedate > Time.now.beginning_of_day + 1.days && task.duedate < Time.now.end_of_day + 1.days) %>
+      <span class="dateForTaskEntry">
+        <span class=<%=urgency%>><%= showDate %></span>
+      </span>
+  <% end %>
+</div>
+</li>

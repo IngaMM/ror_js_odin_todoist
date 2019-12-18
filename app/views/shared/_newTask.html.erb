@@ -1,0 +1,19 @@
+<div id="addNewTask" class="invisible">
+  <h2> Add a task </h2>
+  <%= form_tag("/tasks", method: "post") do %>
+    <div class="field">
+      <%= label_tag(:title, "Title:") %>
+      <%= text_field_tag(:title) %>
+    </div>
+    <div class="field">
+      <%= label_tag(:project, "Project:") %>
+      <%= select_tag(:project, options_for_select(@project_options, params[:projects])) %>
+    </div>
+    <div class="field">
+      <%= label_tag(:duedate, "Due date:") %>
+      <%= date_field_tag "duedate" %>
+    </div>
+    <%= submit_tag("Create")%>
+    <div id="abortNewTask" class="fakeLink">Abort</div>
+  <% end %>
+</div>

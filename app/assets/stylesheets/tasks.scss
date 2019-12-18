@@ -1,0 +1,55 @@
+.button_to {
+  display: inline;
+}
+
+.setCompleted,
+.isCompleted {
+  width: 20px;
+  position: absolute;
+  left: -25px;
+  top: 3px;
+}
+
+.setCompleted:hover {
+  background: url("checkmark.png");
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.isCompleted:hover {
+  color: white;
+}
+
+.checked {
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 16px;
+}
+
+.overdue {
+  color: red;
+}
+
+.taskEntry {
+  position: relative;
+}
+
+.projectForTaskEntry,
+.dateForTaskEntry {
+  position: absolute;
+  right: 5px;
+}
+
+.taskList {
+  line-height: 1.5;
+}
+
+#addTask {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#abortEditTask,
+#abortNewTask {
+  margin-top: 5px;
+}

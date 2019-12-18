@@ -1,0 +1,4 @@
+<li class="project">
+  <% tasksProject = project.tasks.where("completed = ?", "false").count %>
+  <span class="dot" style="background-color:<%=project.color%>"></span> <%= link_to project.title, project %> <span class="taskNumber"><%= tasksProject %></span> <span class="threeDots" data-projectid = <%=project.id%> data-projecttitle = <%=project.title.to_json.html_safe%> data-projectcolor = <%=project.color%>>...</span>
+</li>

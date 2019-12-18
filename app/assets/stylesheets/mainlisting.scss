@@ -1,0 +1,26 @@
+#notLoggedIn,
+#logInNowBlock {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#logInNow:hover {
+  color: red;
+}
+
+#mainListing {
+  background-color: white;
+  border-left: 3px solid #f0f0f0;
+  border-right: 3px solid #f0f0f0;
+  padding-left: 10px;
+}
+
+#dateToday {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+#linkShow:hover {
+  color: red;
+}

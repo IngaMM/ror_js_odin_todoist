@@ -1,0 +1,41 @@
+last_in_alphabet:
+  id: 1
+  title: "ZZZ"
+  completed: false
+  duedate: <%= Date.today %>
+  project: another_project
+
+first_in_alphabet:
+  id: 2
+  title: "AAA"
+  completed: true
+  duedate: <%= Date.today %>
+  project: another_project
+
+another_task:
+  id: 3
+  title: "Another Task"
+  completed: false
+  duedate: <%= Date.today - 3.days %>
+  project: first_in_alphabet
+
+my_task:
+  id: 4
+  title: "My Task"
+  completed: true
+  duedate: <%= Date.today - 2.days %>
+  project: first_in_alphabet
+
+my_future_task:
+  id: 5
+  title: "My Future Task"
+  completed: false
+  duedate: <%= Date.today + 2.days %>
+  project: first_in_alphabet
+
+my_other_future_task:
+  id: 6
+  title: "My Other Future Task"
+  completed: true
+  duedate: <%= Date.today + 2.days %>
+  project: first_in_alphabet

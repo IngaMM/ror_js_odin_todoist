@@ -1,0 +1,71 @@
+#projects {
+  font-weight: bold;
+  cursor: pointer;
+  width: 80px;
+}
+
+#projectList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.threeDots,
+.threeDotsTask {
+  cursor: pointer;
+  position: relative;
+}
+
+#projectMenuContainer,
+#taskMenuContainer {
+  position: absolute;
+  background-color: white;
+  border: solid 1px black;
+  padding: 5px;
+  width: 110px;
+  left: 0px;
+  z-index: 100;
+}
+
+#projectMenu,
+#taskMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#today,
+#next7days,
+#projects,
+#projectList li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#today:hover,
+#next7days:hover,
+#projectList li:hover {
+  background-color: white;
+}
+
+.taskNumber {
+  color: grey;
+  font-size: 13px;
+}
+
+#deleteProjectLink:hover {
+  color: red;
+}

@@ -1,0 +1,16 @@
+<div id="editProject" class="invisible">
+  <h1> Edit the project </h1>
+  <%= form_tag("/projects/0", method: "patch", id: "editProjectForm") do %>
+    <div class="field">
+      <%= label_tag(:title, "Title:") %>
+      <%= text_field_tag :title, nil, id: 'editTitleField' %>
+    </div>
+    <div class="field">
+      <%= label_tag(:color, "Color:") %>
+      <%= select_tag "color", raw("<option>yellow</option><option>orange</option><option>red</option><option>pink</option><option>blue</option><option>green</option><option>brown</option>"), id: 'editColorField'%>
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= submit_tag("Update")%>
+    <div id="abortEditProject" class="fakeLink">Abort</div>
+  <% end %>
+</div>

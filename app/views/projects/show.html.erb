@@ -1,0 +1,27 @@
+<%= render 'shared/header' %>
+<%= render 'shared/newProject' %>
+<%= render 'shared/editProject' %>
+<main>
+  <div class="emptySpace"></div>
+  <%= render 'shared/sidebar' %>
+  <div id="mainListing">
+    <% if current_user == @project.user %>
+      <h1> <%=@project.title%> </h1>
+      <% if @tasks.any? %>
+        <ul class="taskList">
+          <%= render @tasks %>
+        </ul>
+      <% else %>
+      <p> <%= @alternativeText %> </p>
+      <% end %>
+    <% end %>
+    <%= link_to @linkText, @linkPath, id: "linkShow"%>
+    <div id="addTask" class="fakeLink">
+      Add a task
+    </div>
+    <%= render 'shared/newTask' %>
+    <%= render 'shared/editTask' %>
+    <%= render 'shared/taskMenuContainer' %>
+  </div>
+  <div class="emptySpace"></div>
+</main>

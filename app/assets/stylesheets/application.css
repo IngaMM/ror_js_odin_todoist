@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.deviseScreen {
+  margin-left: 10px;
+}
+
+html {
+  background-color: #f8f8f8;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #f0f0f0;
+}
+
+body {
+  margin: 0;
+  font-family: arial;
+  margin-left: 10px;
+}
+
+.invisible {
+  display: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 250px 620px 1fr;
+}
+
+@media all and (max-width: 961px) {
+  main {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .emptySpace {
+    display: none;
+  }
+}
+
+@media all and (max-width: 641px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #sidebar {
+    margin-bottom: 10px;
+  }
+}
+
+.fakeLink {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.fakeLink:hover {
+  color: red;
+}
+
+.notice,
+.alert {
+  text-align: center;
+  line-height: 1.5;
+}

@@ -1,0 +1,39 @@
+<%= render 'shared/header' %>
+<%= render 'shared/newProject' %>
+<%= render 'shared/editProject' %>
+<main>
+  <div class="emptySpace"></div>
+  <%= render 'shared/sidebar' %>
+  <div id="mainListing">
+    <h1> <%= @title %>
+      <%if @title == "Today"%>
+        <span id="dateToday"> <%=Date.today.to_s(:long)%></span>
+      <%end%>
+    </h1>
+    <% if @tasks.any? %>
+      <% @dates.each do |date| %>
+      <% urgency = if date < Time.now.beginning_of_day then "overdue" else "" end%>
+      <% showDate = date.to_s(:long) %>
+      <% showDate = "Today" if (date > Time.now.beginning_of_day && date < Time.now.end_of_day) %>
+      <% showDate = "Tomorrow" if (date > Time.now.beginning_of_day + 1.days && date < Time.now.end_of_day + 1.days) %>
+      <h2 class=<%=urgency%>><%= showDate %></h2>
+      <ul class="taskList">
+        <%= render @tasks.where("duedate = ?", date) %>
+      </ul>
+      <% end %>
+    <% else %>
+      <p> <%= @alternativeText %> </p>
+    <% end %>
+    <div>
+      <%= link_to @linkText, @linkPath, id: "linkShow"%>
+    </div>
+    <div id="addTask" class="fakeLink">
+      Add a task
+    </div>
+    <%= render 'shared/newTask' %>
+    <%= render 'shared/editTask' %>
+    <%= render 'shared/taskMenuContainer' %>
+  </div>
+
+  <div class="emptySpace"></div>
+</main>

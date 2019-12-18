@@ -1,0 +1,15 @@
+<div id="addNewProject" class="invisible">
+  <h1> Add a project </h1>
+  <%= form_tag("/projects", method: "post") do %>
+    <div class="field">
+      <%= label_tag(:title, "Title:") %>
+      <%= text_field_tag(:title) %>
+    </div>
+    <div class="field">
+      <%= label_tag(:color, "Color:") %>
+      <%= select_tag "color", raw("<option>yellow</option><option>orange</option><option>red</option><option>pink</option><option>blue</option><option>green</option><option>brown</option>")%>
+    </div>
+    <%= submit_tag("Create")%>
+    <div id="abortNewProject" class="fakeLink">Abort</div>
+  <% end %>
+</div>

@@ -1,0 +1,20 @@
+<div id="sidebar">
+  <% tasksToday = current_user.tasks.where("completed = ?", "false").where("dueDate <= ?", Time.now.end_of_day).count %>
+  <% tasksNext7days = current_user.tasks.where("completed = ?", "false").where("dueDate <= ?", Time.now.end_of_day + 7.days).count %>
+  <div id="today"> <%= link_to "Today", root_path %> <span class="taskNumber"><%= tasksToday %></span></div>
+  <div id="next7days"> <%= link_to "Next 7 days" , next7days_path%> <span class="taskNumber"><%= tasksNext7days %></span></div>
+  <div id="projects"> <span id=projectArrow>v </span>Projects </div>
+  <div id="projectListContainer">
+    <%= render 'projects/projects' %>
+  </div>
+  <div id=projectMenuContainer class="invisible">
+    <ul id="projectMenu">
+      <li id="editProjectLink" class="fakeLink">Edit Project </li>
+
+      <li class=fakeLink"><a data-confirm="Are you sure?" data-method="delete" id="deleteProjectLink" href="/projects/0">Delete Project</a></li>
+    </ul>
+  </div>
+  <div id="addProject" class="fakeLink">
+    Add a project
+  </div>
+</div>
