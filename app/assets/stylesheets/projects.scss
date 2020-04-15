@@ -31,4 +31,9 @@
 #abortEditProject,
 #abortNewProject {
   margin-top: 5px;
+  font-size: 14px;
+}
+
+#deleteProjectLink:hover {
+  text-decoration: underline;
 }

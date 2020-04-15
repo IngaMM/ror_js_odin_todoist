@@ -52,4 +52,9 @@
 #abortEditTask,
 #abortNewTask {
   margin-top: 5px;
+  font-size: 14px;
+}
+
+#deleteTaskLink:hover {
+  text-decoration: underline;
 }

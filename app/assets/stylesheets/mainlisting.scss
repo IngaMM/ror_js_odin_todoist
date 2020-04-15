@@ -6,11 +6,11 @@
 }
 
 #logInNow:hover {
-  color: red;
+  text-decoration: none;
 }
 
 #mainListing {
-  background-color: white;
+  background-color: #b3d9ff;
   border-left: 3px solid #f0f0f0;
   border-right: 3px solid #f0f0f0;
   padding-left: 10px;
@@ -21,6 +21,10 @@
   font-weight: normal;
 }
 
+#linkShow {
+  text-decoration: underline;
+}
+
 #linkShow:hover {
-  color: red;
+  text-decoration: none;
 }

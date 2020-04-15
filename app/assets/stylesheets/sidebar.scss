@@ -47,12 +47,22 @@ a {
   color: black;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 #today,
 #next7days,
 #projects,
 #projectList li {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+#today a,
+#next7days a,
+#projectList a {
+  text-decoration: none;
 }
 
 #today:hover,
@@ -64,8 +74,4 @@ a {
 .taskNumber {
   color: grey;
   font-size: 13px;
-}
-
-#deleteProjectLink:hover {
-  color: red;
 }
